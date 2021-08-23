@@ -1,6 +1,6 @@
 import React from 'react';
 import Users  from './features/users/Users';
-import { Counter }  from './features/counter/Counter';
+//import { Counter }  from './features/counter/Counter';
 import { Cart, CartAjax } from './features/cart';
 import './App.css';
 
@@ -13,7 +13,7 @@ function App() {
       <div>
           <Cart />
           <Users />
-          <Counter />
+          {/*<Counter />*/}
       </div>
     </div>
   );
