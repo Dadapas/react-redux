@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchUsers } from './userAPI'
+// import { fetchUsers } from './userAPI'
+import axios from 'axios';
 
 const initialState = {
 	status : 'notloading',
@@ -9,7 +10,8 @@ const initialState = {
 export const fetchUsersAnsync = createAsyncThunk(
 	'user/fetchUsers',
 	async () => {
-		const response = await fetchUsers();
+		// const response = await fetchUsers();
+		const response = await axios.get('https://jsonplaceholder.typicode.com/users')
 		console.log(response)
 
 		return response.data
