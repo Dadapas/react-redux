@@ -1,5 +1,5 @@
 import {
-	userSelector, loadingSelector, 
+	userSelector, loadingSelector,
 	fetchUsersAnsync
 } from './userSlice'
 import { useDispatch } from 'react-redux';
@@ -29,6 +29,8 @@ function Users(props) {
 		<div>
 			<button onClick={ () => dispatch(fetchUsersAnsync()) } >load user</button>
 		</div>
+	) : loading === 'failed' ? (
+		<h3 style={{color: 'red', textAlign:'center'}} >Error fetching data from server</h3>
 	) : <p>Loading...</p>
 }
 

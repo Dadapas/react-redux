@@ -40,7 +40,10 @@ const userSlice = createSlice({
 				action.payload.forEach( user  => {
 					state.users.push(user)
 				});
-
+			})
+			.addCase(fetchUsersAnsync.rejected, (state, action) => {
+				state.status = 'failed';
+				state.error = action.payload
 			})
 	}
 })
